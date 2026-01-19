@@ -1,0 +1,44 @@
+{
+  "name": "img-ascii-term",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Convert images to colorful ASCII art for terminal display",
+  "license": "MIT",
+  "packageManager": "pnpm@9.15.5",
+  "engines": {
+    "node": ">= 22"
+  },
+  "author": "Panzer-Jack <panzer_jack@panzer-jack.cn> (https://github.com/Panzer-Jack)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Panzer-Jack/img-ascii-term.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "tsdown",
+    "start": "tsdown && node ./playground/index.js",
+    "dev": "tsdown --watch",
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "publish": "npm publish"
+  },
+  "devDependencies": {
+    "@clack/prompts": "^0.11.0",
+    "@types/node": "^25.0.3",
+    "canvas": "^3.2.1",
+    "chalk": "^5.6.2",
+    "cross-spawn": "^7.0.6",
+    "tsdown": "^0.18.4",
+    "typescript": "^5.9.3"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.mts"
+}
